@@ -78,8 +78,8 @@ class _Puzzle extends StatelessWidget {
             SingleChildScrollView(
               child: ConstrainedBox(
                 constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                child: Column(
-                  children: const [
+                child: const Column(
+                  children: [
                     PuzzleHeader(),
                     PuzzleSections()
                   ],

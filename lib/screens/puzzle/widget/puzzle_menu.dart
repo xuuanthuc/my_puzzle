@@ -88,7 +88,7 @@ class PuzzleMenuItem extends StatelessWidget {
           padding: EdgeInsets.only(left: leftPadding),
           child: Tooltip(
             message:
-            theme != currentTheme ? context.l10n.puzzleChangeTooltip : '',
+            theme != currentTheme ? context.l10n!.puzzleChangeTooltip : '',
             child: TextButton(
               style: TextButton.styleFrom(
                 padding: EdgeInsets.zero,

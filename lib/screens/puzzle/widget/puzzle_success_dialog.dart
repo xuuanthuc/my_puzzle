@@ -238,7 +238,7 @@ class DashatarScore extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = context.select((ThemeBloc bloc) => bloc.state.theme);
     final state = context.watch<PuzzleBloc>().state;
-    final l10n = context.l10n;
+    final l10n = context.l10n!;
 
     return ResponsiveLayoutBuilder(
       small: (_, child) => child!,
@@ -449,7 +449,7 @@ class DashatarTimer extends StatelessWidget {
   }
 
   String _getDurationLabel(Duration duration, BuildContext context) {
-    return context.l10n.dashatarPuzzleDurationLabelText(
+    return context.l10n!.dashatarPuzzleDurationLabelText(
       duration.inHours.toString(),
       duration.inMinutes.remainder(60).toString(),
       duration.inSeconds.remainder(60).toString(),
@@ -515,7 +515,7 @@ class DashatarShareYourScore extends StatelessWidget {
                   crossAxisAlignment: titleAndMessageCrossAxisAlignment,
                   children: [
                     Text(
-                      l10n.dashatarSuccessShareYourScoreTitle,
+                      l10n!.dashatarSuccessShareYourScoreTitle,
                       key: const Key('dashatar_share_your_score_title'),
                       textAlign: textAlign,
                       style: titleTextStyle.copyWith(
