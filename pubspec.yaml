@@ -29,6 +29,7 @@ flutter:
     - assets/
     - assets/images/
     - assets/images/blue/
+    - assets/images/point/
   #   - images/a_dot_ham.jpeg
 
   # example:
