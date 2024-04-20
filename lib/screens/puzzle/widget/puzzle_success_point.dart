@@ -70,7 +70,7 @@ class _PuzzlePointSuccessState extends State<PuzzlePointSuccess>
     _pointProgress = _getPointProgress();
     _layoutAnimationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1000),
+      duration: const Duration(milliseconds: 2000),
     );
     _resultCompleteAnimationController = AnimationController(
       vsync: this,
@@ -86,10 +86,12 @@ class _PuzzlePointSuccessState extends State<PuzzlePointSuccess>
         curve: const Interval(0, 0.6, curve: Curves.easeOut),
       ),
     );
-    _layoutAnimationController.forward();
-    Future.delayed(Duration(milliseconds: 2200 + _pointProgress * 1200))
-        .then((value) {
-      _resultCompleteAnimationController.forward();
+    Future.delayed(const Duration(seconds: 1)).then((value){
+      _layoutAnimationController.forward();
+      Future.delayed(Duration(milliseconds: 3200 + _pointProgress * 1200))
+          .then((value) {
+        _resultCompleteAnimationController.forward();
+      });
     });
   }
 
@@ -466,7 +468,7 @@ class _PointLevelState extends State<PointLevel> with TickerProviderStateMixin {
       parent: _animationController,
       curve: Curves.ease,
     ));
-    Future.delayed(Duration(milliseconds: 3800 + widget.point * 100))
+    Future.delayed(Duration(milliseconds: 5800 + widget.point * 100))
         .then((value) {
       _animationController.forward();
     });
@@ -578,7 +580,7 @@ class _StarBackgroundPointState extends State<StarBackgroundPoint>
     ));
     if (widget.isActive) {
       Future.delayed(
-        Duration(milliseconds: widget.index * 300),
+        Duration(milliseconds: 2000 + widget.index * 300),
         _animationController.forward,
       ).then((value) {
         Future.delayed(
@@ -708,10 +710,10 @@ class _StarPointState extends State<StarPoint> with TickerProviderStateMixin {
           return AnimatedPositioned(
             top: (snap.data == widget.offset)
                 ? snap.data!.dy - 5
-                : snap.data!.dy - 20,
+                : snap.data!.dy - 21,
             left: (snap.data == widget.offset)
                 ? snap.data!.dx - 5
-                : snap.data!.dx - 19,
+                : snap.data!.dx - 21,
             duration: const Duration(milliseconds: 200),
             child: Visibility(
               visible: widget.isActive,
