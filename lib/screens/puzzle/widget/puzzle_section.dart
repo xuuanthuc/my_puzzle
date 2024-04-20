@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:puzzle_simple/screens/puzzle/widget/puzzle_menu.dart';
 import 'package:puzzle_simple/screens/puzzle/widget/puzzle_success_dialog.dart';
+import 'package:puzzle_simple/screens/puzzle/widget/puzzle_success_point.dart';
 
 import '../../../blocs/puzzle/puzzle_bloc.dart';
 import '../../../blocs/theme/theme_bloc.dart';
@@ -96,7 +97,7 @@ class _PuzzleBoardState extends State<PuzzleBoard> {
                     value: context.read<TimerBloc>(),
                   ),
                 ],
-                child: const ShareDialog(),
+                child: const PuzzlePointSuccess(),
               ),
             );
           });

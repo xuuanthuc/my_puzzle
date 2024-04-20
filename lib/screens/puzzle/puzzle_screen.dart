@@ -6,7 +6,6 @@ import 'package:puzzle_simple/blocs/timer/timer_bloc.dart';
 import 'package:puzzle_simple/models/ticker.dart';
 import 'package:puzzle_simple/screens/puzzle/widget/puzzle_header.dart';
 import 'package:puzzle_simple/screens/puzzle/widget/puzzle_section.dart';
-import 'package:puzzle_simple/screens/puzzle/widget/puzzle_success_point.dart';
 import 'package:puzzle_simple/themes/puzzle_theme_animations.dart';
 import 'package:puzzle_simple/themes/simple_puzzle_theme.dart';
 
@@ -28,7 +27,7 @@ class PuzzleScreen extends StatelessWidget {
           ),
         ),
       ],
-      child: const PuzzlePointSuccess(),
+      child: const PuzzleView(),
     );
   }
 }
